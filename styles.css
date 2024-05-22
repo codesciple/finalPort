@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --background-color: black;
+    --text-color: green;
+    --highlight-color: #00f; /* Vibrant blue */
+    --button-blue: #00f; /* Vibrant blue */
+    --button-text-color: white;
+    --base-font-size: 18px; /* Increased base font size */
+}
+
+body {
+    font-family: 'VT323', monospace;
+    font-size: var(--base-font-size);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header, nav, main, footer {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 5px 10px;
+    animation: blink-button 1.5s infinite;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure links wrap on smaller screens */
+}
+
+footer ul li {
+    display: inline;
+    margin: 5px 10px; /* Adjust spacing for better layout */
+}
+
+.project-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.project-item {
+    width: 200px; /* Fixed width */
+    height: 300px; /* Increased height */
+    margin: 10px;
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    flex: 0 0 auto;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.project-image {
+    width: calc(100% - 20px); /* Ensures padding is consistent */
+    height: 25%; /* Adjusted to take up 1/4th of the box height */
+    margin-bottom: 10px; /* Adds space between the image and the frame */
+    background-size: cover;
+    background-position: center;
+}
+
+.project-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    color: var(--text-color);
+    flex-grow: 1; /* Ensures content takes up the remaining space */
+}
+
+.arrow {
+    display: none;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column; /* Adjust layout for smaller screens */
+}
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    border: 2px solid var(--text-color);
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    border: 1px solid var(--text-color);
+    padding: 10px;
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.skill-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+/* Footer Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Education & Certification Section */
+.education-certification-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.education-box, .certification-box {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    border: 1px solid var(--text-color);
+    padding: 10px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.timeline-date {
+    flex-shrink: 0;
+    width: 80px;
+    font-weight: bold;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.timeline-content {
+    flex-grow: 1;
+}
+
+.highlight {
+    color: var(--highlight-color);
+    text-transform: uppercase;
+}
+
+.education-box h3, .certification-box h3 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.education-box ul, .certification-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.education-box ul li, .certification-box ul li {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+/* Contact Me Section */
+#contact {
+    padding: 20px;
+    margin: 10px;
+    border: none; /* Remove border */
+}
+
+#contact p {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+button.download-cv {
+    background-color: var(--button-blue);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button.download-cv:hover {
+    background-color: var(--button-text-color);
+    color: var(--button-blue);
+}
+
+/* Horizontal line after each section */
+hr.section-divider {
+    border: 0;
+    border-top: 1px solid var(--text-color);
+    margin: 20px 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .project-item {
+        width: 150px;
+        height: 250px; /* Adjusted height for smaller screens */
+        padding: 5px;
+    }
+
+    .arrow {
+        padding: 5px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .education-certification-container {
+        flex-direction: column;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-picture {
+        width: 250px;
+        height: 250px;
+    }
+
+    .timeline-date {
+        width: auto;
+        margin-right: 10px;
+    }
+}
+
+/* Light mode styles */
+body.light-mode {
+    --background-color: white;
+    --text-color: black;
+    --highlight-color: #00f; /* Keep vibrant blue for light mode */
+    --button-blue: #00f; /* Vibrant blue */
+    --button-text-color: white;
+}
+
+/* Scrollbar styles for dark mode */
+body::-webkit-scrollbar {
+    height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: green;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+/* Scrollbar styles for light mode */
+body.light-mode::-webkit-scrollbar-track {
+    background: white;
+}
+
+body.light-mode::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: 3px solid white;
+}
+
+/* Animation for title */
+#animated-title {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid var(--text-color);
+    width: 100%; /* Set width to 100% to prevent caret from moving forward */
+    max-width: fit-content; /* Use max-width to fit content */
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--text-color); }
+}
+
+@keyframes blink-button {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
