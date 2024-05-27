@@ -63,7 +63,4 @@ document.addEventListener('DOMContentLoaded', function() {
     type();
 });
 
-function downloadCV() {
-    // Add your CV download logic here
-    alert("Downloading CV...");
-}
+
